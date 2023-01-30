@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Avatar from "../avatar";
 import CommentsList from "../comments-list";
-import Input from "../input";
 import Like from "../like";
 import StartDiscussion from "../start-discussion";
 import TimeAgo from "../time-ago";
@@ -41,14 +40,14 @@ const CommentsItem = ({
         <p className={style.text}>{text}</p>
         <div className={style.button_container}>
           <Like iLikedIt={iLikedIt} likes={likes} />
-          { replies  && (
+          {replies && (
             <button className={style.reply_btn} onClick={() => setReply(true)}>
               Reply
             </button>
           )}
         </div>
         {replies && replies.length > 0 && <CommentsList list={replies} />}
-        {  reply && <StartDiscussion isReply {...loginUser} />}
+        {reply && <StartDiscussion isReply {...loginUser} />}
       </div>
     </div>
   );

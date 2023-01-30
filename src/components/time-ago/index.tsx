@@ -1,5 +1,4 @@
-import style from "./style.module.less"
-
+import style from "./style.module.less";
 
 const TimeAgo = ({ date }: { date: number }) => {
   const time = new Date().getTime() - date;
@@ -19,7 +18,7 @@ const TimeAgo = ({ date }: { date: number }) => {
         : miunute > 1
         ? miunute + "min "
         : "a minute "}
-         ago
+      ago
     </div>
   );
 };

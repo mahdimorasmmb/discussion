@@ -1,5 +1,4 @@
-
-import style from "./appStyle.module.less";
+import style from "./styles/appStyle.module.less";
 import CommentsList from "./components/comments-list";
 import myProfile from "./assets/profileme.jpg";
 import StartDiscussion from "./components/start-discussion";
@@ -77,10 +76,8 @@ const loginUser: IUser = {
 function App() {
   return (
     <div className={style.container}>
-      <StartDiscussion  {...loginUser} />
-    
-     <CommentsList list={discussions} />
-   
+      <StartDiscussion {...loginUser} />
+      <CommentsList list={discussions} />
     </div>
   );
 }

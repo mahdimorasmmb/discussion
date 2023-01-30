@@ -3,16 +3,16 @@ import Input from "../input";
 import style from "./style.module.less";
 
 interface Props extends IUser {
-  isReply?:boolean
+  isReply?: boolean;
 }
 
-const StartDiscussion = ({isReply,...otherProps}: Props) => {
+const StartDiscussion = ({ isReply, ...otherProps }: Props) => {
   return (
     <div className={`${style.container} ${isReply && style.isActiveBg}`}>
       <div className={style.avatar_container}>
         <Avatar {...otherProps} />
       </div>
-      <Input isReply={isReply}  />
+      <Input isReply={isReply} />
     </div>
   );
 };

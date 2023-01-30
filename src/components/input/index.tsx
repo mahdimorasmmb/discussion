@@ -1,14 +1,16 @@
-import React from 'react'
-import style from "./style.module.less"
+import style from "./style.module.less";
 
 interface Props {
-    isReply?:boolean
+  isReply?: boolean;
 }
 
-const Input = ({isReply}:Props) => {
+const Input = ({ isReply }: Props) => {
   return (
-    <input className={style.input} placeholder={isReply ? "Reply" : 'Start a discussion'}/>
-  )
-}
+    <input
+      className={style.input}
+      placeholder={isReply ? "Reply" : "Start a discussion"}
+    />
+  );
+};
 
-export default Input
+export default Input;

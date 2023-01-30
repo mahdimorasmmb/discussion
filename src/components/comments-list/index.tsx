@@ -1,25 +1,20 @@
-import CommentsItem from "../comment-item"
-import style from "./style.module.less"
-
+import CommentsItem from "../comment-item";
+import style from "./style.module.less";
 
 interface Props {
-  list:IDiscussion[] | IComment[]
+  list: IDiscussion[] | IComment[];
 }
 
-
-
-const CommentsList = ({list}:Props)  => {
+const CommentsList = ({ list }: Props) => {
   return (
     <div className={style.container}>
-      {
-        list.map((comment) =>(
-          <div key={comment.id}>
-            <CommentsItem  {...comment}/>
-            </div>
-        ))
-      }
+      {list.map((comment) => (
+        <div key={comment.id}>
+          <CommentsItem {...comment} />
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default CommentsList
+export default CommentsList;
