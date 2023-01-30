@@ -1,26 +1,40 @@
+import Avatar from "../avatar";
+import CommentsList from "../comments-list";
 import Like from "../like";
+import TimeAgo from "../time-ago";
 import style from "./style.module.less";
 
-interface Props {
-  data: IDiscussion;
-}
+const CommentsItem = ({
+  user,
+  date,
+  iLikedIt,
+  id,
+  likes,
+  replies,
+  text
+}: IDiscussion) => {
+ 
 
-const CommentsItem = ({ data }: Props) => {
   return (
-    <div>
+    <div className={style.container}>
       <div>
-        <img src={data.user.avatar} />
+        <Avatar {...user} />
       </div>
       <div>
-        <div>
-          <h3>{data.user.name}</h3>
-          <span>{data.date}</span>
+        <div className={style.name_data}>
+          <h3>{user?.name}</h3>
+          <TimeAgo date={date}/>
         </div>
-        <p>{data.text}</p>
-        <div>
-          <Like />
-          <button>Reply</button>
+        <p className={style.text}>{text}</p>
+        <div className={style.button_container}>
+          <Like iLikedIt={iLikedIt} likes={likes}   />
+          <button className={style.reply_btn}>Reply</button>
         </div>
+        {
+        replies &&   replies.length > 0 && (
+            <CommentsList list={replies}/>
+          )
+        }
       </div>
     </div>
   );

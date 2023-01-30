@@ -26,7 +26,7 @@ const discussions: IDiscussion[] = [
         },
         text: "Yes, that sounds good! I can think about this tomorrow. Then do we plan to start that compaign?",
         likes: 3,
-        iLikedIt: true,
+        iLikedIt: false,
       },
       {
         id: 6,

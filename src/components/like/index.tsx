@@ -1,10 +1,31 @@
-import React from 'react'
-import style from "./style.module.less"
+import React, { useState } from "react";
+import style from "./style.module.less";
 
-const Like = () => {
-  return (
-    <div>Like </div>
-  )
+interface Props {
+  likes: number;
+  iLikedIt: boolean;
 }
 
-export default Like
+const Like = ({ iLikedIt, likes: numberLikes }: Props) => {
+  const [isLike, setLike] = useState(iLikedIt);
+  const [likes, setLikes] = useState(numberLikes);
+
+  const handleLike = () => {
+    if (!isLike) {
+      setLikes(likes + 1);
+    } else {
+      setLikes(likes - 1);
+    }
+    setLike(!isLike);
+  };
+  return (
+    <div className={`${style.like_btn} ${isLike && style.isActive}`}>
+      <button onClick={handleLike}>
+        <i className="fa fa-thumbs-up" aria-hidden="true"></i>
+      </button>{" "}
+      {likes}
+    </div>
+  );
+};
+
+export default Like;
