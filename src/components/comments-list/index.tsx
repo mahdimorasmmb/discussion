@@ -3,7 +3,7 @@ import style from "./style.module.less"
 
 
 interface Props {
-  list:IDiscussion[] 
+  list:IDiscussion[] | IComment[]
 }
 
 

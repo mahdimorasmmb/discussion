@@ -1,7 +1,8 @@
-import CreateDiscussion from "./components/create-discussion";
+
 import style from "./appStyle.module.less";
 import CommentsList from "./components/comments-list";
 import myProfile from "./assets/profileme.jpg";
+import StartDiscussion from "./components/start-discussion";
 
 const discussions: IDiscussion[] = [
   {
@@ -76,7 +77,7 @@ const loginUser: IUser = {
 function App() {
   return (
     <div className={style.container}>
-      <CreateDiscussion {...loginUser} />
+      <StartDiscussion  {...loginUser} />
       <CommentsList list={discussions} />
     </div>
   );
