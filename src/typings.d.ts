@@ -11,7 +11,7 @@ interface IComment {
     iLikedIt: boolean;
 }
 interface IDiscussion extends IComment {
-    replies: IComment[];
+    replies?: IComment[];
 }
 interface IProps {
     comments: IComment[];

@@ -78,7 +78,9 @@ function App() {
   return (
     <div className={style.container}>
       <StartDiscussion  {...loginUser} />
-      <CommentsList list={discussions} />
+    
+     <CommentsList list={discussions} />
+   
     </div>
   );
 }
